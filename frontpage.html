@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corey Hommel | Portfolio</title>
+    <style>
+        /* CSS Styles */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Fallback for older browsers */
+            height: 100dvh; /* Dynamic height: perfectly respects mobile browser address bars */
+            overflow: hidden; /* Disables all scrolling */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+            color: #333;
+        }
+        
+        /* Header containing the logo */
+        header {
+            padding: 30px 40px;
+            flex-shrink: 0; /* Prevents the header from squishing */
+        }
+        .logo {
+            height: 70px; 
+            width: auto;
+        }
+
+        /* Main content area for the three boxes */
+        main {
+            flex-grow: 1; /* Takes up all remaining middle space */
+            display: flex;
+            gap: 20px;
+            padding: 0 40px;
+            align-items: center; 
+            justify-content: center; 
+        }
+        
+        /* The link boxes */
+        .card {
+            flex: 1; 
+            height: 65vh; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #5c1b40; 
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease;
+        }
+        .card:hover .card-overlay {
+            background: rgba(0, 0, 0, 0.2); 
+        }
+
+        .card h2 {
+            position: relative;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        /* Minimalist Footer */
+        footer {
+            padding: 20px 40px 30px;
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================== */
+        /* MOBILE RESPONSIVENESS                      */
+        /* ========================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px; /* Tighter padding to save space */
+                text-align: center; 
+            }
+            .logo {
+                height: 45px; /* Slightly smaller logo */
+            }
+            main {
+                flex-direction: column; 
+                padding: 0 15px;
+                gap: 12px; /* Smaller gap between the boxes */
+            }
+            .card {
+                width: 100%;
+                height: 100%; /* Tells the box to strictly fit available space */
+                min-height: 0; /* Crucial: allows boxes to shrink to ensure the footer stays on screen */
+            }
+            .card h2 {
+                font-size: 1.6rem; /* Slightly smaller text */
+                padding: 10px;
+            }
+            footer {
+                padding: 10px 15px 20px; /* Tighter padding to pull the footer up safely */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Corey Hommel Logo" class="logo">
+    </header>
+
+    <main>
+        <a href="academic.html" class="card" style="background-image: url('academicpreview.png');">
+            <div class="card-overlay"></div>
+            <h2>Academic Projects</h2>
+        </a>
+        
+        <a href="professional.html" class="card" style="background-image: url('professionalpreview.png');">
+            <div class="card-overlay"></div>
+            <h2>Professional Projects</h2>
+        </a>
+        
+        <a href="personal.html" class="card" style="background-image: url('personalpreview.png');">
+            <div class="card-overlay"></div>
+            <h2>Personal Projects</h2>
+        </a>
+    </main>
+
+    <footer>
+        contentedhappenings@gmail.com • Clemmons, NC
+    </footer>
+
+</body>
+</html>
